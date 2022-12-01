@@ -22,11 +22,6 @@ Pix2Pix는 "Image-to-Image Translation with Conditional Adversarial Networks"에
 <script src="https://gist.github.com/youngjaeoh/78833412a664deff6ba250ccf67a3014.js"></script>
 테스트 겸 train_path[0]으로 첫 번째 이미지를 불러온 다음 plt.imshow() 함수를 통해서 이미지를 display합니다. 세 번째 줄의 plt.axis('off')의 경우, 이미지를 그냥 그리게 된다면 x축과 y축에 숫자가 뜨는데, 이를 없애서 깔끔하게 이미지를 그려주는 역할을 합니다.  
 
-이제 이미지들이 잘 들어가 있는 것을 확인하였으니, 이미지 전처리 클래스를 생성할 차례입니다. 코드를 보면서 단계별로 설명하겠습니다.
-<script src="https://gist.github.com/youngjaeoh/b6135372152dfffa6d48f37f59123dff.js"></script>
-전처리 클래스는 총 세개의 함수로 나누어져 있으며, 이들은 __init__(), __getitem__(), __len()__ 함수입니다.  
-우선 __init__() 부터 확인해 보겠습니다. 이 함수는 mode가 train인지, validation인지 확인하여 이에 걸맞는 transform을 선언해 줍니다. 만약 train일 경우, transforms.Compose() 함수를 사용해서 이미지 크기를 256x256 사이즈로 맞추어 주고, 랜덤으로 좌우 반전 augmentation을 진행하는 변환 과정을 체이닝해 줍니다. validation의 경우 augmentation을 건너뛰고 이미지 resize만 진행합니다.  
-__getitem__() 함수의 경우, index를 받아서 이미지를 불러온 다음, __init__에서 만들었던 transform에 넣어서 이미지를 변환한 이후,  skimage의 rgb2lab 라이브리를 활용해서 rgb 컬러 채널을 Lab 컬러 채널로 바꾸어 줍니다.  
 
 
 
