@@ -4,7 +4,9 @@ layout: home
 ---
 
 [Pix2Pix]를 활용하여 흑백 이미지를 컬러 이미지로 변환하는 튜토리얼에 오신 걸 환영합니다.  
-Pix2Pix는 "Image-to-Image Translation with Conditional Adversarial Networks"에서 소개된 딥러닝 모델인데, 나온 지 오래되었지만 GAN의 역사에서 빼 놓을 수 없을 정도로 임팩트가 대단했고, 코드 또한 단순해서 GAN에 입문하는 사람들은 꼭 한번씩 읽어야만 하는 논문입니다. 이번 튜토리얼에서는 Pix2Pix를 데이터를 다운받는 것부터 시작해서, 모델 설계까지 딥러닝 개발의 모든 단계를 하나 하나 코딩할 것입니다.  
+Pix2Pix는 "Image-to-Image Translation with Conditional Adversarial Networks"에서 소개된 딥러닝 모델인데, 나온 지 오래되었지만 GAN의 역사에서 빼 놓을 수 없을 정도로 임팩트가 대단했고, 코드 또한 단순해서 GAN에 입문하는 사람들은 꼭 한번씩 읽어야만 하는 논문입니다. 이번 튜토리얼에서는 Pix2Pix를 데이터를 다운받는 것부터 시작해서, 모델 설계까지 딥러닝 개발의 모든 단계를 하나 하나 코딩할 것입니다.
+
+![image](image.jpeg)
 
 우선, 코드를 돌리는데 필요한 라이브러리들을 import합니다.
 <script src="https://gist.github.com/youngjaeoh/89b7c8b7914a92e063f6da60779398a9.js"></script>
@@ -54,7 +56,7 @@ __getitem__() 함수의 경우, index를 받아서 이미지를 불러온 다음
 아래의 if문은 iteration이 200의 배수일 때마다 그림을 출력하게 해 주는 코드입니다. generator를 eval(), no_grad()함수를 사용해서 잠시 학습을 중지시키고, 가짜 색을 생성하게 한 다음, 다시 train() 모드로 돌려 놓음으로 가짜 색을 생성하고 메인 함수 직전에 만들었던 Lab_to_rgb() 함수를 사용해서 rgb 채널로 변환 후 이미지를 display합니다.  
 현재 코드는 train 이미지를 그대로 보여주는 코드이지만, 여기서 validation 이미지를 그리게 만든다면 모델의 성능을 더 객관적으로 확인할 수 있을 것입니다.  
 
-여기까지 Pix2Pix로 흑백 사진을 컬러 사진으로 바꾸는 코드였습니다.  
+여기까지 Pix2Pix로 흑백 사진을 컬러 사진으로 바꾸는 코드였습니다.
 긴 글 읽어주셔서 감사합니다 :)
 
 
